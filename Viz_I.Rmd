@@ -107,3 +107,21 @@ ggplot(weather_df, aes(x = name, y = tmax)) +
 ggplot(weather_df, aes(x = tmax, y = name)) +
   geom_density_ridges(scale = 0.85) 
 ```
+
+
+
+## Saving Plots
+
+```{r}
+weather_plot = ggplot(weather_df, aes(x = tmin, y = tmax)) + 
+  geom_point(aes(color = name), alpha = .5) 
+
+ggsave("weather_plot.pdf", weather_plot, width = 8, height = 5)
+
+# Exporting weather plot to a PDF
+
+weather_plot = ggplot(weather_df, aes(x = tmin, y = tmax)) + 
+  geom_point(aes(color = name), alpha = .5) 
+
+ggsave("weather_plot.pdf", weather_plot, width = 16, height = 10)
+```
