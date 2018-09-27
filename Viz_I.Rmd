@@ -37,3 +37,9 @@ weather_df
 weather_df %>% View
 ```
 
+
+More plot options
+```{r}
+ggplot(weather_df, aes(x = tmin, y = tmax)) + 
+  geom_point(aes(color = name))
+```
